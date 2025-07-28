@@ -75,15 +75,15 @@ function Navbar() {
             aria-label="Toggle Menu"
             className="transition-transform duration-300"
           >
-            {isOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+            {isOpen ? <FaTimes size={26} /> : <FaBars size={22} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-[#0f172a]/60 backdrop-blur-5xl text-white pt-24 px-6 z-40 transform transition-transform duration-300 ease-in-out ${
-          isOpen ? "translate-y-0" : "-translate-y-full"
+        className={`md:hidden fixed top-0 left-0 w-full h-96 bg-[#0f172a]/60 backdrop-blur-xl text-white pt-24 px-6 z-40 transform transition-transform duration-300 ease-in-out ${
+          isOpen ? "translate-y-0" : "-translate-x-full"
         }`}
       >
         <div className="flex flex-col gap-6 text-lg font-medium overflow-y-auto">

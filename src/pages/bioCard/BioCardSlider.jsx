@@ -7,7 +7,7 @@ const bios = [
     id: 1,
     content: (
       <p className="text-2xl md:text-3xl leading-relaxed font-medium tracking-wide">
-        I’m <span className="font-bold text-blue-400">Jerin</span> — A self-motivated MERN Stack Developer with hands-on experience building real-world full-stack projects.
+        I’m <span className="font-bold text-blue-400">Jerin</span> — A self-motivated MERN Stack learner, actively building real-world projects to gain hands-on full-stack development experience.
       </p>
     ),
   },

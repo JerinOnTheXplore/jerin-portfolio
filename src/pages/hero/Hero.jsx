@@ -73,7 +73,7 @@ function Hero() {
               sequence={[
                 "Aspiring MERN Stack Developer",
                 1500,
-                "Self-Taught Web Developer",
+                "Self-Taught Junior Web Developer",
                 1500,
                 "React & Node.js Enthusiast",
                 1500,

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 import {
-  FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGitAlt, FaTools
+  FaHtml5, FaCss3Alt, FaReact, FaNodeJs, FaGitAlt, FaTools,
 } from "react-icons/fa";
 import {
   SiJavascript, SiTailwindcss, SiExpress, SiMongodb,
@@ -41,10 +42,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="bg-[#0f172a] py-20 px-4 md:px-12 text-white"
-    >
+    <section id="skills" className="bg-[#0f172a] py-20 px-4 md:px-12 text-white">
       <div className="max-w-7xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: -40 }}
@@ -64,22 +62,39 @@ const Skills = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: idx * 0.2 }}
               viewport={{ once: true }}
-              className="bg-[#1e293b] border border-cyan-500/30 rounded-3xl p-6 hover:shadow-[0_0_30px_#22d3eeaa] shadow-cyan-500/20 transition duration-500 transform hover:scale-[1.05]"
+              className="relative group"
             >
-              <h3 className="text-2xl font-bold mb-6 text-center text-cyan-300 drop-shadow-glow">
-                {category.title}
-              </h3>
-              <ul className="grid grid-cols-1 gap-4">
-                {category.skills.map((skill, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center gap-4 bg-[#334155] hover:bg-[#475569] transition-colors duration-300 px-4 py-3 rounded-xl text-lg shadow-md hover:shadow-[0_0_15px_#22d3eeaa]"
-                  >
-                    <span className="text-2xl">{skill.icon}</span>
-                    <span>{skill.name}</span>
-                  </li>
-                ))}
-              </ul>
+              <Tilt
+                glareEnable={true}
+                glareMaxOpacity={0.35}
+                glareColor="#22d3ee"
+                glarePosition="all"
+                tiltMaxAngleX={10}
+                tiltMaxAngleY={10}
+                scale={1.03}
+                className="rounded-3xl"
+              >
+                <div className="relative z-10 bg-white/5 backdrop-blur-md border border-cyan-400/20 rounded-xl p-6 transition-transform duration-500
+                  shadow-[10px_10px_0px_#164e63]
+                  group-hover:shadow-[0_0_40px_#22d3ee66]
+                  group-hover:-translate-y-3"
+                >
+                  <h3 className="text-2xl font-bold mb-6 text-center text-cyan-300 drop-shadow-glow">
+                    {category.title}
+                  </h3>
+                  <ul className="grid grid-cols-1 gap-4">
+                    {category.skills.map((skill, index) => (
+                      <li
+                        key={index}
+                        className="flex items-center gap-4 bg-[#334155]/50 hover:bg-[#475569]/60 transition-colors duration-300 px-4 py-3 rounded-xl text-lg shadow-md hover:shadow-[0_0_15px_#22d3eeaa]"
+                      >
+                        <span className="text-2xl">{skill.icon}</span>
+                        <span>{skill.name}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Tilt>
             </motion.div>
           ))}
         </div>
