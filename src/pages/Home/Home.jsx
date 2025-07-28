@@ -4,15 +4,16 @@ import Navbar from '../../components/Navbar';
 import About from '../about/About';
 import Projects from '../projects/Projects';
 import Skills from '../skills/Skills';
+import Contact from '../contact/Contact';
 
 const Home = () => {
     return (
         <div>
-        <Navbar></Navbar>
          <Hero></Hero>
          <About></About>  
          <Projects></Projects>
          <Skills></Skills> 
+         <Contact></Contact>
         </div>
     );
 };
