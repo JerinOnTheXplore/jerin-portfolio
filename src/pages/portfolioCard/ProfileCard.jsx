@@ -49,7 +49,7 @@ const ProfileCard = () => {
       {backgroundIndices.map((idx, i) => (
         <div
           key={idx}
-          className={`absolute top-0 left-0 w-72 h-[360px] p-4 rounded-2xl bg-[#0f172a]/40 backdrop-blur-md border border-cyan-300/20 text-cyan-400 font-mono text-sm shadow-cyan-300/10 shadow-xl pointer-events-none ${layeredStyles[i]} z-${i}`}
+          className={`absolute top-0 left-0 w-72 h-[390px] p-4 rounded-2xl bg-[#0f172a]/40 backdrop-blur-md border border-cyan-300/20 text-cyan-400 font-mono text-sm shadow-cyan-300/10 shadow-xl pointer-events-none ${layeredStyles[i]} z-${i}`}
         >
           <code>{codeSnippets[idx]}</code>
         </div>
@@ -65,7 +65,7 @@ const ProfileCard = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -40 }}
             transition={{ duration: 0.5 }}
-            className="absolute top-0 left-0 w-72 h-[360px] bg-[#0f172a]/80 backdrop-blur-lg border-2 border-cyan-400 rounded shadow-lg z-50 overflow-hidden flex items-center justify-center p-4"
+            className="absolute top-0 left-0 w-74 h-[390px] bg-[#0f172a]/80 backdrop-blur-lg border-2 border-cyan-400 rounded shadow-lg z-50 overflow-hidden flex items-center justify-center p-4"
           >
             <img
               src={jerinImg}
@@ -81,12 +81,12 @@ const ProfileCard = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -40 }}
             transition={{ duration: 0.5 }}
-            className="absolute top-0 left-0 w-62 h-[360px] bg-[#0f172a]/80 backdrop-blur-lg border-2 border-cyan-400 rounded-2xl shadow-lg z-40 overflow-hidden flex flex-col items-center justify-between p-4"
+            className="absolute top-0 left-0 w-62 h-[360px] bg-[#0f172a]/80 backdrop-blur-lg border-2 border-cyan-400 rounded shadow-lg z-40 overflow-hidden flex flex-col items-center justify-between p-4"
           >
             <img
               src={jerinImg}
               alt="Jerin"
-              className="w-full h-2/3 object-cover rounded-xl"
+              className="w-full h-4/5 object-cover rounded-xl"
             />
             <code className="text-cyan-300 font-mono text-sm mt-4 text-center">
               {codeSnippets[(activeIndex - 1) % codeSnippets.length]}
