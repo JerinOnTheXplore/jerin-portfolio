@@ -71,17 +71,11 @@ function Hero() {
 
             <TypeAnimation
               sequence={[
+                "Frontend Developer",
+                1500,
                 "Aspiring MERN Stack Developer",
                 1500,
-                "Self-Taught Junior Web Developer",
-                1500,
-                "React & Node.js Enthusiast",
-                1500,
-                "MongoDB & Express.js Explorer",
-                1500,
-                "Passionate About Building Real Projects",
-                1500,
-                "Learning, Improving & Growing Everyday",
+                "Focused on Building Scalable Frontends & Real-World Applications",
                 1500,
               ]}
               wrapper="p"
@@ -92,7 +86,7 @@ function Hero() {
 
             {/* Glowing Code Snippet */}
             <div
-              className="mt-4 mb-6 font-mono text-cyan-400 text-lg select-none"
+              className="mt-4 mb-4 font-normal text-cyan-400 text-lg select-none"
               style={{
                 textShadow:
                   "0 0 6px #22d3ee, 0 0 12px #22d3ee, 0 0 24px #22d3ee, 0 0 48px #3b82f6",
@@ -101,7 +95,7 @@ function Hero() {
               <pre className="whitespace-pre-wrap">
                 <code>
                   <span className="block">const jerin = () =&gt; &#123;</span>
-                  <span className="block ml-5">return "MERN Stack Learner | Turning Ideas into Code";</span>
+                  <span className="block ml-5">return "Frontend Developer | Building modern web apps with passion and creativity";</span>
                   <span className="block">&#125;;</span>
                   <span
                     className="block mt-1"
@@ -116,7 +110,9 @@ function Hero() {
             </div>
 
             <p className="text-gray-300 mb-8 text-lg font-medium leading-relaxed">
-              I’ve built several dynamic web apps using the MERN stack during my learning journey.
+              Building modern web apps with passion and creativity.<br />
+              Dedicated to crafting seamless user experiences and scalable solutions.<br />
+              Constantly learning, evolving, and pushing the boundaries of frontend development.
             </p>
 
             <div className="flex gap-6 flex-wrap justify-center md:justify-start">
