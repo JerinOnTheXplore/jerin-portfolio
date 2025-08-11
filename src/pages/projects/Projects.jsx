@@ -1,7 +1,9 @@
 import { Link } from "react-router";
 import Tilt from "react-parallax-tilt";
 import { TypeAnimation } from "react-type-animation";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaExternalLinkAlt, FaGithub, FaReact, FaNodeJs } from "react-icons/fa";
+import { SiMongodb, SiTailwindcss, SiExpress } from "react-icons/si";
+import { motion } from "framer-motion";
 
 const projectsData = [
   {
@@ -36,14 +38,77 @@ const projectsData = [
   },
 ];
 
+const floatingVariants = {
+  float: {
+    y: [0, -20, 0],
+    rotate: [0, 8, 0],
+    transition: {
+      duration: 6,
+      repeat: Infinity,
+      repeatType: "loop",
+      ease: "easeInOut",
+    },
+  },
+};
+
 function Projects() {
   return (
     <section
-      className="relative bg-[#0f172a] text-white py-16 px-6 md:px-12 min-h-screen"
+      className="relative bg-[#0f172a] text-white py-16 px-6 md:px-48 min-h-screen overflow-hidden"
       id="projects"
     >
-      <div className="max-w-6xl mx-auto text-center mb-12">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-extrabold">
+      {/* Floating tech icons background */}
+      <motion.div
+        variants={floatingVariants}
+        animate="float"
+        className="absolute top-20 left-10 text-cyan-400 opacity-10 text-7xl z-0 pointer-events-none"
+      >
+        <FaReact />
+      </motion.div>
+      <motion.div
+        variants={floatingVariants}
+        animate="float"
+        style={{ animationDelay: "1.5s" }}
+        className="absolute bottom-32 right-20 text-green-500 opacity-10 text-7xl z-0 pointer-events-none"
+      >
+        <FaNodeJs />
+      </motion.div>
+      <motion.div
+        variants={floatingVariants}
+        animate="float"
+        style={{ animationDelay: "3s" }}
+        className="absolute top-40 right-48 text-emerald-400 opacity-10 text-6xl z-0 pointer-events-none"
+      >
+        <SiMongodb />
+      </motion.div>
+      <motion.div
+        variants={floatingVariants}
+        animate="float"
+        style={{ animationDelay: "2s" }}
+        className="absolute top-10 right-1/3 text-sky-400 opacity-10 text-6xl z-0 pointer-events-none"
+      >
+        <SiTailwindcss />
+      </motion.div>
+      <motion.div
+        variants={floatingVariants}
+        animate="float"
+        style={{ animationDelay: "4s" }}
+        className="absolute bottom-16 left-1/4 text-gray-300 opacity-10 text-5xl z-0 pointer-events-none"
+      >
+        <FaGithub />
+      </motion.div>
+      <motion.div
+        variants={floatingVariants}
+        animate="float"
+        style={{ animationDelay: "2.8s" }}
+        className="absolute bottom-1/3 left-10 text-gray-400 opacity-10 text-5xl z-0 pointer-events-none"
+      >
+        <SiExpress />
+      </motion.div>
+
+      {/* Heading */}
+      <div className="max-w-6xl mx-auto text-center mb-12 relative z-10">
+        <h2 className=" text-3xl font-bold">
           <TypeAnimation
             sequence={[
               "My Projects",
@@ -61,7 +126,8 @@ function Projects() {
         </h2>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Project Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 items-stretch gap-8 relative z-10">
         {projectsData.map((project) => (
           <Tilt
             key={project.id}
@@ -72,11 +138,11 @@ function Projects() {
             scale={1.01}
             transitionSpeed={800}
           >
-            <div className="bg-[#1e293b] border-2 border-cyan-300/30 rounded-xl overflow-hidden shadow-lg 
+            <div className="bg-[#1e293b] border-2 border-cyan-300/30 rounded-lg overflow-hidden shadow-lg 
               hover:shadow-[0_8px_30px_rgba(0,255,255,0.3)] hover:border-cyan-400 
-              transition duration-300 flex flex-col">
+              transition duration-300 flex flex-col min-h-[400px] h-full">
               
-              {/* Image with gradient overlay */}
+              {/* Image */}
               <div className="relative">
                 <img
                   src={project.image}

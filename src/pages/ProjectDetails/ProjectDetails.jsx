@@ -70,7 +70,7 @@ function ProjectDetails() {
 
   return (
     <section className="bg-[#0f172a] text-white py-16 px-6 md:px-12 min-h-screen">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <Link to="/projects" className="text-blue-400 hover:underline mb-6 block">
           ← Back to Projects
         </Link>
