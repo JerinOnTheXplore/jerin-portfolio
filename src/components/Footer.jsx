@@ -13,7 +13,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="text-center md:text-left"
         >
-          <h2 className="text-xl font-semibold text-cyan-300">Jerin's Portfolio</h2>
+          <h2 className="text-xl font-semibold text-cyan-300">Mst. Nasrin Howlader Jerin</h2>
           <p className="text-sm text-gray-400 mt-1">
             © {new Date().getFullYear()} All rights reserved.
           </p>
@@ -36,7 +36,7 @@ const Footer = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/nasrinjerin"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-300 transition-all duration-300 hover:drop-shadow-[0_0_6px_cyan]"

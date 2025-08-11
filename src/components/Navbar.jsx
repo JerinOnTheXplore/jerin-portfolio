@@ -28,8 +28,8 @@ function Navbar() {
 
   const navLinks = (
     <>
-      {["/", "/about", "/projects", "/contact"].map((path, idx) => {
-        const labels = ["Home", "About", "Projects", "Contact"];
+      {["/", "/about", "/projects","skills", "/contact"].map((path, idx) => {
+        const labels = ["Home", "About", "Projects","Skills", "Contact"];
         return (
           <NavLink
             key={path}
@@ -57,10 +57,10 @@ function Navbar() {
           : "bg-transparent"
       } transition-all duration-300`}
     >
-      <div className="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-16 py-4 flex justify-between items-center">
         {/* Logo */}
         <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-wide">
-          Jerin
+          Mst. Nasrin Howlader Jerin
         </h1>
 
         {/* Desktop Nav */}
@@ -82,7 +82,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-96 bg-[#0f172a]/60 backdrop-blur-xl text-white pt-24 px-6 z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-0 left-0 w-full bg-[#0f172a]/60 backdrop-blur-xl text-white pt-24 px-6 z-40 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-y-0" : "-translate-x-full"
         }`}
       >

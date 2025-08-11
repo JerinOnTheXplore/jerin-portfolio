@@ -53,7 +53,7 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <section id="skills" className="bg-[#0f172a] py-10 px-4 md:px-12 text-white relative overflow-hidden">
+    <section id="skills" className="bg-[#0f172a] py-20 px-4 md:px-12 text-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative z-10">
         <motion.h2
           initial={{ opacity: 0, y: -40 }}

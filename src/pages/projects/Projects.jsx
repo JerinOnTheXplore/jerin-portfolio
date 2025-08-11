@@ -54,10 +54,11 @@ const floatingVariants = {
 function Projects() {
   return (
     <section
-      className="relative bg-[#0f172a] text-white py-16 px-6 md:px-48 min-h-screen overflow-hidden"
+      className="bg-[#0f172a] py-20 px-4 md:px-12 text-white relative overflow-hidden"
       id="projects"
     >
-      {/* Floating tech icons background */}
+      <div className="max-w-4xl mx-auto relative">
+        {/* Floating tech icons background */}
       <motion.div
         variants={floatingVariants}
         animate="float"
@@ -105,9 +106,10 @@ function Projects() {
       >
         <SiExpress />
       </motion.div>
+      </div>
 
       {/* Heading */}
-      <div className="max-w-6xl mx-auto text-center mb-12 relative z-10">
+      <div className="  text-center mb-12 relative z-10">
         <h2 className=" text-3xl font-bold">
           <TypeAnimation
             sequence={[
@@ -127,7 +129,7 @@ function Projects() {
       </div>
 
       {/* Project Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 items-stretch gap-8 relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-10 md:gap-16 items-stretch mt-2 md:px-16 lg:px-30">
         {projectsData.map((project) => (
           <Tilt
             key={project.id}
