@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { BsEnvelope } from "react-icons/bs";
 import { TypeAnimation } from "react-type-animation";
 import { Fade } from "react-awesome-reveal";
@@ -53,7 +53,7 @@ function Hero() {
         </motion.div>
       ))}
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:items-center py-36 md:py-20 relative z-10">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:items-center py-36 md:py-20 relative z-10">
         {/* Image Section */}
         <ProfileCard></ProfileCard>
 
@@ -110,10 +110,43 @@ function Hero() {
             </div>
 
             <p className="text-gray-300 mb-8 text-lg font-medium leading-relaxed">
-              Building modern web apps with passion and creativity.<br />
               Dedicated to crafting seamless user experiences and scalable solutions.<br />
               Constantly learning, evolving, and pushing the boundaries of frontend development.
             </p>
+            <div className="flex gap-5 mt-6 mb-5 justify-center md:justify-start text-cyan-400">
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/in/nasrinjerin"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="hover:text-blue-600 transition-colors text-3xl"
+  >
+    <FaLinkedin />
+  </a>
+
+  {/* GitHub */}
+  <a
+    href="https://github.com/JerinOnTheXplore"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="GitHub"
+    className="hover:text-gray-500 transition-colors text-3xl"
+  >
+    <FaGithub />
+  </a>
+
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/8801869659491"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+    className="hover:text-green-500 transition-colors text-3xl"
+  >
+    <FaWhatsapp />
+  </a>
+</div>
 
             <div className="flex gap-6 flex-wrap justify-center md:justify-start">
               <a
