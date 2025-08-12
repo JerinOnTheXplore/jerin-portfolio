@@ -98,8 +98,8 @@ const BioCardSlider = () => {
         >
           {bios[activeIndex].content}
             {/* Click instruction */}
-      <p className="absolute bottom-2 w-full text-center text-cyan-400 text-sm select-none opacity-80">
-        Click anywhere on the card to see the next bio →
+      <p className="absolute bottom-2 w-full text-center text-cyan-300 text-sm select-none opacity-80">
+        Click anywhere on the card to see the next →
       </p>
         </motion.div>
           {/* Click instruction */}

@@ -84,7 +84,7 @@ function About() {
         <motion.h2
           animate={headingControls}
           initial={{ opacity: 0, y: -30 }}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.3 }}
           className="text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
         >
           <FaLaptopCode className="text-blue-400 text-4xl" />

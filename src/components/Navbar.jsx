@@ -1,8 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router"; 
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars, FaMoon, FaSun, FaTimes } from "react-icons/fa";
+
 
 function Navbar() {
+   
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -35,7 +37,7 @@ function Navbar() {
             key={path}
             to={path}
             end={path === "/"}
-            onClick={() => setIsOpen(false)} // Close menu on click
+            onClick={() => setIsOpen(false)} 
             className={({ isActive }) =>
               `${navLinkStyle} ${
                 isActive ? "text-cyan-400 after:w-full" : "after:w-0"
@@ -59,7 +61,7 @@ function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-16 py-4 flex justify-between items-center">
         {/* Logo */}
-        <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-wide">
+        <h1 className="text-lg md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-wide">
           Mst. Nasrin Howlader Jerin
         </h1>
 

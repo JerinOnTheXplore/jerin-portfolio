@@ -95,8 +95,12 @@ const ProfileCard = () => {
         )}
       </AnimatePresence>
 
+      <p className="absolute bottom-6 left-20 w-full text-center text-cyan-200 text-sm select-none opacity-80">
+        Click anywhere on the card to see the next →
+      </p>
+
       {/* Dots */}
-      <div className="absolute bottom-4 w-full flex justify-center gap-2 z-50">
+      <div className="absolute bottom-1 w-full flex justify-center gap-2 z-50">
         {[...Array(codeSnippets.length + 1)].map((_, i) => (
           <div
             key={i}
