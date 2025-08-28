@@ -71,9 +71,9 @@ function Hero() {
 
             <TypeAnimation
               sequence={[
-                "Frontend Developer",
+                "MERN Stack Developer",
                 1500,
-                "Aspiring MERN Stack Developer",
+                "Exploring Next.js",
                 1500,
                 "Focused on Building Scalable Frontends & Real-World Applications",
                 1500,
@@ -95,7 +95,7 @@ function Hero() {
               <pre className="whitespace-pre-wrap">
                 <code>
                   <span className="block">const jerin = () =&gt; &#123;</span>
-                  <span className="block ml-5">return "Frontend Developer | Building modern web apps with passion and creativity";</span>
+                  <span className="block ml-5">return "MERN Stack Developer | Building modern web apps with passion and creativity";</span>
                   <span className="block">&#125;;</span>
                   <span
                     className="block mt-1"
@@ -159,7 +159,7 @@ function Hero() {
               </a>
 
               <a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1jDp4qm-QAnwOFOQq9eu_eaUwsbCmxqxV/view?usp=drivesdk"
                 download="jerin-resume.pdf"
                 className="flex items-center gap-3 px-8 py-3 border-2 border-cyan-400 text-cyan-400 hover:text-white hover:border-white rounded-full transition-transform transform hover:scale-105 shadow-md font-semibold"
               >

@@ -7,7 +7,7 @@ const bios = [
     id: 1,
     content: (
       <p className="text-xl md:text-3xl  leading-relaxed  tracking-wide">
-        I’m a passionate <span className="font-bold text-blue-400">Frontend Developer</span> with a growing interest in full-stack development. I love turning ideas into interactive, visually appealing, and functional web experiences that create real impact.
+        I’m a passionate <span className="font-bold text-blue-400">MERN Stack Developer</span>, constantly exploring new technologies to grow as a versatile full-stack developer. I love turning ideas into interactive, visually appealing, and functional web experiences that create real impact.
       </p>
     ),
   },

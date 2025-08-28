@@ -169,7 +169,7 @@ function Projects() {
                 <div className="flex justify-between items-center mt-auto">
                   <Link
                     to={`/projects/${project.id}`}
-                    className="px-3 py-1 rounded bg-blue-500/10 border border-blue-400 text-blue-400 
+                    className="px-1 py-1 rounded bg-blue-500/10 border border-blue-400 text-blue-400 
                       hover:bg-blue-500 hover:text-white transition text-sm"
                   >
                     View Details

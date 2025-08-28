@@ -59,7 +59,7 @@ const ProfileCard = () => {
           Jerin
         </h2>
         <p className="text-sm text-cyan-100/90 font-mono drop-shadow-[0_0_6px_#22d3ee]">
-          Frontend Developer · MERN Stack Enthusiast
+          MERN Stack Developer · Exploring Next.js
         </p>
       </div>
     </motion.div>
