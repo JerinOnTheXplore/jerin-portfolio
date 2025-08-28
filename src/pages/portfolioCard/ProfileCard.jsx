@@ -1,118 +1,68 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import jerinImg from "../../assets/jerin.png";
 
-const codeSnippets = [
-  `const jerin = "Frontend Developer";`,
-  `const field = "Coding & Applied Nutrition";`,
-  `const skills = ["React", "MongoDB","Express.JS", "Node.JS"];`,
-  `const hobby = "Journaling + Scrapbooking";`,
-  `const dream = "Becoming a Full Stack Developer";`,
-];
-
-const layeredStyles = [
-  "translate-y-6 rotate-[-4deg] scale-95",
-  "translate-y-12 rotate-[5deg] scale-90",
-  "translate-y-16 rotate-[-6deg] scale-85",
-];
-
 const ProfileCard = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [tilt, setTilt] = useState({ rotateX: 0, rotateY: 0 });
 
-  const nextSlide = () => {
-    setActiveIndex((prev) => (prev + 1) % (codeSnippets.length + 1)); // +1 for initial image only slide
+  const handleMouseMove = (e) => {
+    const { offsetWidth, offsetHeight } = e.currentTarget;
+    const x = e.nativeEvent.offsetX;
+    const y = e.nativeEvent.offsetY;
+
+    
+    const rotateX = ((y - offsetHeight / 2) / 20) * -1;
+    const rotateY = (x - offsetWidth / 2) / 20;
+
+    setTilt({ rotateX, rotateY });
   };
 
-  // For background layers, we need 3 layers after activeIndex
-  // but if activeIndex = 0 (image only), background layers should be codeSnippets[0,1,2]
-  // else codeSnippets starting from activeIndex (excluding activeIndex itself)
-
-  const backgroundIndices = [];
-
-  if (activeIndex === 0) {
-    // first slide (image only), show first 3 codeSnippets as background
-    backgroundIndices.push(0, 1, 2);
-  } else {
-    // slide activeIndex -1 based on codeSnippets array
-    // for background, take next 3 indices cycling through codeSnippets length
-    for (let i = 1; i <= 3; i++) {
-      backgroundIndices.push((activeIndex - 1 + i) % codeSnippets.length);
-    }
-  }
+  const resetTilt = () => {
+    setTilt({ rotateX: 0, rotateY: 0 });
+  };
 
   return (
-    <div
-      className="relative w-full max-w-xl h-[460px] mx-auto overflow-visible cursor-pointer"
-      onClick={nextSlide}
+    <motion.div
+      style={{
+        rotateX: tilt.rotateX,
+        rotateY: tilt.rotateY,
+        transformStyle: "preserve-3d",
+      }}
+      initial={{ opacity: 0, scale: 0.9, y: 30 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={resetTilt}
+      className="relative w-[320px] max-w-sm mx-auto h-[420px] rounded-2xl overflow-hidden cursor-pointer group
+                 border border-cyan-400/60 shadow-[0_0_25px_rgba(34,211,238,0.7)]
+                 transition-transform duration-300 ease-out"
     >
-      {/* Background Layered Cards */}
-      {backgroundIndices.map((idx, i) => (
-        <div
-          key={idx}
-          className={`absolute top-0 left-0 w-72 h-[390px] p-4 rounded-2xl bg-[#0f172a]/40 backdrop-blur-md border border-cyan-300/20 text-cyan-400 font-mono text-sm shadow-cyan-300/10 shadow-xl pointer-events-none ${layeredStyles[i]} z-${i}`}
-        >
-          <code>{codeSnippets[idx]}</code>
-        </div>
-      ))}
+      {/* Cyan glow layer */}
+      <div className="absolute inset-0 rounded-2xl border-2 border-cyan-400/80 opacity-80 
+                      group-hover:opacity-100 group-hover:shadow-[0_0_50px_rgba(34,211,238,0.9)]
+                      transition-all duration-500 ease-in-out"></div>
 
-      {/* Active Card */}
-      <AnimatePresence mode="wait">
-        {activeIndex === 0 ? (
-          // show only image on first slide
-          <motion.div
-            key="image-only"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -40 }}
-            transition={{ duration: 0.5 }}
-            className="absolute top-0 left-0 w-76 h-[390px] bg-[#0f172a]/80 backdrop-blur-lg border-2 border-cyan-400 rounded shadow-lg z-50 overflow-hidden flex items-center justify-center p-5"
-          >
-            <img
-              src={jerinImg}
-              alt="Jerin"
-              className="w-72 h-96 object-cover rounded"
-            />
-          </motion.div>
-        ) : (
-          // show code snippet + image container with code on active slides
-          <motion.div
-            key={activeIndex}
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -40 }}
-            transition={{ duration: 0.5 }}
-            className="absolute top-0 left-0 w-72 h-[390px] bg-[#0f172a]/80 backdrop-blur-lg border-2 border-cyan-400 rounded shadow-lg z-40 overflow-hidden flex flex-col items-center justify-between p-4"
-          >
-            <img
-              src={jerinImg}
-              alt="Jerin"
-              className="w-full h-4/5 object-cover rounded"
-            />
-            <code className="text-cyan-300 font-mono text-sm mt-4 text-center">
-              {codeSnippets[(activeIndex - 1) % codeSnippets.length]}
-            </code>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Profile Image */}
+      <img
+        src={jerinImg}
+        alt="Jerin"
+        className="w-full h-full object-cover rounded-2xl"
+      />
 
-      <p className="absolute bottom-6 left-20 w-full text-center text-cyan-200 text-sm select-none opacity-80">
-        Click on the card to see the next →
-      </p>
-
-      {/* Dots */}
-      <div className="absolute bottom-1 w-full flex justify-center gap-2 z-50">
-        {[...Array(codeSnippets.length + 1)].map((_, i) => (
-          <div
-            key={i}
-            className={`h-2 w-2 rounded-full transition-all duration-300 ${
-              i === activeIndex
-                ? "bg-cyan-400 scale-125"
-                : "bg-cyan-700/40"
-            }`}
-          ></div>
-        ))}
+      {/* Overlay content */}
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-[#0f172a]/85 via-[#0f172a]/30 to-transparent 
+                      rounded-2xl flex flex-col justify-end p-6"
+        style={{ transform: "translateZ(40px)" }} // overlay text pop-out effect
+      >
+        <h2 className="text-2xl font-semibold text-cyan-300 drop-shadow-[0_0_8px_#22d3ee]">
+          Jerin
+        </h2>
+        <p className="text-sm text-cyan-100/90 font-mono drop-shadow-[0_0_6px_#22d3ee]">
+          Frontend Developer · MERN Stack Enthusiast
+        </p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
