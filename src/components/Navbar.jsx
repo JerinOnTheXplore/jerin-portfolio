@@ -1,9 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { NavLink } from "react-router"; 
+<<<<<<< HEAD
 import { FaBars, FaTimes } from "react-icons/fa";
 import ProfileCard from "../pages/portfolioCard/ProfileCard";
+=======
+import { FaBars, FaMoon, FaSun, FaTimes } from "react-icons/fa";
+
+>>>>>>> a6823c464aed53db3b4f328c15d3bb3c93fb8fad
 
 function Navbar() {
+   
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,14 +35,14 @@ function Navbar() {
 
   const navLinks = (
     <>
-      {["/", "/about", "/projects", "/contact"].map((path, idx) => {
-        const labels = ["Home", "About", "Projects", "Contact"];
+      {["/", "/about", "/projects","skills", "/contact"].map((path, idx) => {
+        const labels = ["Home", "About", "Projects","Skills", "Contact"];
         return (
           <NavLink
             key={path}
             to={path}
             end={path === "/"}
-            onClick={() => setIsOpen(false)} // Close menu on click
+            onClick={() => setIsOpen(false)} 
             className={({ isActive }) =>
               `${navLinkStyle} ${
                 isActive ? "text-cyan-400 after:w-full" : "after:w-0"
@@ -58,12 +64,16 @@ function Navbar() {
           : "bg-transparent"
       } transition-all duration-300`}
     >
+<<<<<<< HEAD
       <div className="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
         <div className="flex items-center gap-5">
           <ProfileCard></ProfileCard>
+=======
+      <div className="max-w-7xl mx-auto px-16 py-4 flex justify-between items-center">
+>>>>>>> a6823c464aed53db3b4f328c15d3bb3c93fb8fad
         {/* Logo */}
-        <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-wide">
-          Jerin
+        <h1 className="text-lg md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-wide">
+          Mst. Nasrin Howlader Jerin
         </h1>
         </div>
 
@@ -86,7 +96,7 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-96 bg-[#0f172a]/60 backdrop-blur-xl text-white pt-24 px-6 z-40 transform transition-transform duration-300 ease-in-out ${
+        className={`md:hidden fixed top-0 left-0 w-full bg-[#0f172a]/60 backdrop-blur-xl text-white pt-24 px-6 z-40 transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-y-0" : "-translate-x-full"
         }`}
       >

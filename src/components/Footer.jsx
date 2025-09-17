@@ -13,7 +13,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="text-center md:text-left"
         >
-          <h2 className="text-xl font-semibold text-cyan-300">Jerin's Portfolio</h2>
+          <h2 className="text-xl font-semibold text-cyan-300">Mst. Nasrin Howlader Jerin</h2>
           <p className="text-sm text-gray-400 mt-1">
             © {new Date().getFullYear()} All rights reserved.
           </p>
@@ -36,7 +36,7 @@ const Footer = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourprofile"
+            href="https://www.linkedin.com/in/nasrinjerin"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-cyan-300 transition-all duration-300 hover:drop-shadow-[0_0_6px_cyan]"
@@ -44,11 +44,13 @@ const Footer = () => {
             <FaLinkedin />
           </a>
           <a
-            href="mailto:jerinjerin101325@gmail.com"
-            className="text-gray-400 hover:text-cyan-300 transition-all duration-300 hover:drop-shadow-[0_0_6px_cyan]"
-          >
-            <FaEnvelope />
-          </a>
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=jerinjerin101325@gmail.com&su=Hiring%20Opportunity&body=Hi%20Jerin%2C%0D%0A%0D%0AWe%20came%20across%20your%20portfolio%20and%20would%20love%20to%20connect."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-400 hover:text-white underline transition duration-300"
+            >
+              <FaEnvelope />
+            </a>
         </motion.div>
 
         {/* Back to Top */}

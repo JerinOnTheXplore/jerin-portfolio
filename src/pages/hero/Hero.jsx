@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaDownload } from "react-icons/fa";
+import { FaDownload, FaGithub, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { BsEnvelope } from "react-icons/bs";
 import { TypeAnimation } from "react-type-animation";
 import { Fade } from "react-awesome-reveal";
@@ -53,7 +53,11 @@ function Hero() {
         </motion.div>
       ))}
 
+<<<<<<< HEAD
       <div className="max-w-9xl   md:items-center py-36 md:py-20 relative z-10">
+=======
+      <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:items-center py-36 md:py-20 relative z-10">
+>>>>>>> a6823c464aed53db3b4f328c15d3bb3c93fb8fad
         {/* Image Section */}
         
         {/* Text Section */}
@@ -70,17 +74,11 @@ function Hero() {
 
             <TypeAnimation
               sequence={[
-                "Aspiring MERN Stack Developer",
+                "MERN Stack Developer",
                 1500,
-                "Self-Taught Junior Web Developer",
+                "Exploring Next.js",
                 1500,
-                "React & Node.js Enthusiast",
-                1500,
-                "MongoDB & Express.js Explorer",
-                1500,
-                "Passionate About Building Real Projects",
-                1500,
-                "Learning, Improving & Growing Everyday",
+                "Focused on Building Scalable Frontends & Real-World Applications",
                 1500,
               ]}
               wrapper="p"
@@ -91,7 +89,7 @@ function Hero() {
 
             {/* Glowing Code Snippet */}
             <div
-              className="mt-4 mb-6 font-mono text-cyan-400 text-lg select-none"
+              className="mt-4 mb-4 font-normal text-cyan-400 text-lg select-none"
               style={{
                 textShadow:
                   "0 0 6px #22d3ee, 0 0 12px #22d3ee, 0 0 24px #22d3ee, 0 0 48px #3b82f6",
@@ -100,7 +98,7 @@ function Hero() {
               <pre className="whitespace-pre-wrap">
                 <code>
                   <span className="block">const jerin = () =&gt; &#123;</span>
-                  <span className="block ml-5">return "MERN Stack Learner | Turning Ideas into Code";</span>
+                  <span className="block ml-5">return "MERN Stack Developer | Building modern web apps with passion and creativity";</span>
                   <span className="block">&#125;;</span>
                   <span
                     className="block mt-1"
@@ -115,8 +113,43 @@ function Hero() {
             </div>
 
             <p className="text-gray-300 mb-8 text-lg font-medium leading-relaxed">
-              I’ve built several dynamic web apps using the MERN stack during my learning journey.
+              Dedicated to crafting seamless user experiences and scalable solutions.<br />
+              Constantly learning, evolving, and pushing the boundaries of frontend development.
             </p>
+            <div className="flex gap-5 mt-6 mb-5 justify-center md:justify-start text-cyan-400">
+  {/* LinkedIn */}
+  <a
+    href="https://www.linkedin.com/in/nasrinjerin"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="LinkedIn"
+    className="hover:text-blue-600 transition-colors text-3xl"
+  >
+    <FaLinkedin />
+  </a>
+
+  {/* GitHub */}
+  <a
+    href="https://github.com/JerinOnTheXplore"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="GitHub"
+    className="hover:text-gray-500 transition-colors text-3xl"
+  >
+    <FaGithub />
+  </a>
+
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/8801869659491"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+    className="hover:text-green-500 transition-colors text-3xl"
+  >
+    <FaWhatsapp />
+  </a>
+</div>
 
             <div className="flex gap-6 flex-wrap justify-center md:justify-start">
               <a
@@ -129,7 +162,7 @@ function Hero() {
               </a>
 
               <a
-                href="/resume.pdf"
+                href="https://drive.google.com/file/d/1jDp4qm-QAnwOFOQq9eu_eaUwsbCmxqxV/view?usp=drivesdk"
                 download="jerin-resume.pdf"
                 className="flex items-center gap-3 px-8 py-3 border-2 border-cyan-400 text-cyan-400 hover:text-white hover:border-white rounded-full transition-transform transform hover:scale-105 shadow-md font-semibold"
               >
