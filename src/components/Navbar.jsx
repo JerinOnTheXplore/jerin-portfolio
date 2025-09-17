@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router"; 
 import { FaBars, FaTimes } from "react-icons/fa";
+import ProfileCard from "../pages/portfolioCard/ProfileCard";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -58,10 +59,13 @@ function Navbar() {
       } transition-all duration-300`}
     >
       <div className="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
+        <div className="flex items-center gap-5">
+          <ProfileCard></ProfileCard>
         {/* Logo */}
         <h1 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-wide">
           Jerin
         </h1>
+        </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex gap-6 text-white text-base font-medium items-center">

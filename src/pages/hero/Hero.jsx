@@ -29,7 +29,7 @@ const floatingItems = [
 
 function Hero() {
   return (
-    <section className="relative bg-[#0f172a] text-white min-h-screen flex items-center px-4 overflow-hidden">
+    <section className="relative  bg-[#0f172a] text-white min-h-screen flex items-center px-4 overflow-hidden">
       {/* Floating background code snippets */}
       {floatingItems.map(({ text, style, x, y, delay }, i) => (
         <motion.div
@@ -53,10 +53,9 @@ function Hero() {
         </motion.div>
       ))}
 
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:items-center py-36 md:py-20 relative z-10">
+      <div className="max-w-9xl   md:items-center py-36 md:py-20 relative z-10">
         {/* Image Section */}
-        <ProfileCard></ProfileCard>
-
+        
         {/* Text Section */}
         <Fade direction="right" triggerOnce>
           <motion.div
