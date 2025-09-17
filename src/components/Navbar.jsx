@@ -64,13 +64,11 @@ function Navbar() {
           : "bg-transparent"
       } transition-all duration-300`}
     >
-<<<<<<< HEAD
+
       <div className="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
         <div className="flex items-center gap-5">
           <ProfileCard></ProfileCard>
-=======
-      <div className="max-w-7xl mx-auto px-16 py-4 flex justify-between items-center">
->>>>>>> a6823c464aed53db3b4f328c15d3bb3c93fb8fad
+
         {/* Logo */}
         <h1 className="text-lg md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 tracking-wide">
           Mst. Nasrin Howlader Jerin
